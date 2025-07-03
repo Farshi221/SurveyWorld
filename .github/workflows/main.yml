@@ -1,0 +1,14 @@
+name: Free VPS 6 Hours
+
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Set up 6h VPS
+      run: |
+        sudo apt update
+        sudo apt install -y screen
+        echo "VPS is running..."
+        screen -dm bash -c "while true; do echo Running...; sleep 60; done"
